@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-panel auth-container">
+        <h1>Welcome Back</h1>
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('student')">Student</div>
+            <div class="tab" onclick="switchTab('lecturer')">Lecturer</div>
+        </div>
+        
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <input type="hidden" id="loginType" value="student">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn-glow">Sign In</button>
+            <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--text-muted);">
+                Don't have an account? <a href="#" onclick="toggleRegister()" style="color: var(--primary);">Register</a>
+            </p>
+        </form>
+
+        <form id="registerForm" onsubmit="handleRegister(event)" style="display: none;">
+            <input type="hidden" id="regType" value="student">
+            <div class="form-group">
+                <label for="regUsername">Username</label>
+                <input type="text" id="regUsername" required placeholder="Choose a username">
+            </div>
+            <div class="form-group">
+                <label for="regPassword">Password</label>
+                <input type="password" id="regPassword" required placeholder="Choose a password">
+            </div>
+            <div id="studentFields">
+                <div class="form-group">
+                    <label for="regSection">Section</label>
+                    <input type="text" id="regSection" placeholder="E.g. A, B">
+                </div>
+                <div class="form-group">
+                    <label for="regId">Student ID</label>
+                    <input type="number" id="regId" placeholder="E.g. 101">
+                </div>
+            </div>
+            <div id="lecturerFields" style="display: none;">
+                <div class="form-group">
+                    <label for="regLocId">Lecturer ID</label>
+                    <input type="number" id="regLocId" placeholder="E.g. 501">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-glow" style="background: linear-gradient(90deg, #10b981, #059669);">Create Account</button>
+            <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--text-muted);">
+                Already have an account? <a href="#" onclick="toggleRegister()" style="color: var(--primary);">Sign In</a>
+            </p>
+        </form>
+    </div>
+
+    <div id="notification" class="notification">Message</div>
+    <script src="app.js"></script>
+</body>
+</html>

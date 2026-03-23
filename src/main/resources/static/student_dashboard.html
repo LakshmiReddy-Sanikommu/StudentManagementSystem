@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-panel dashboard-container" style="max-width: 1000px;">
+        <div class="navbar">
+            <h2>Welcome, <span id="userNameDisplay">Student</span>!</h2>
+            <button class="btn-small" onclick="logout()">Logout</button>
+        </div>
+        
+        <div class="card-grid">
+            <div class="card">
+                <h3>Submit Assignment</h3>
+                <p>Upload and submit your pending latest assignments.</p>
+                <button class="btn-glow" style="padding: 10px;" onclick="showNotification('Assignment Submitted Successfully!')">Submit</button>
+            </div>
+            
+            <div class="card">
+                <h3>View Assignments</h3>
+                <p>Check assignments for you and your section.</p>
+                <button class="btn-glow" style="padding: 10px; background: linear-gradient(90deg, #3b82f6, #8a2be2);" onclick="showNotification('You have 2 new assignments.', false)">View All</button>
+            </div>
+            
+            <div class="card">
+                <h3>Update Profile</h3>
+                <p>Manage your account settings and details.</p>
+                <button class="btn-glow" style="padding: 10px; background: linear-gradient(90deg, #10b981, #059669);" onclick="showNotification('Profile editing via API is ready!')">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">Message</div>
+    <script src="app.js"></script>
+</body>
+</html>

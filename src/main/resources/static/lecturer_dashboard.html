@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturer Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-panel dashboard-container" style="max-width: 1200px;">
+        <div class="navbar">
+            <h2>Welcome, <span id="userNameDisplay">Lecturer</span>!</h2>
+            <button class="btn-small" onclick="logout()">Logout</button>
+        </div>
+        
+        <h3 style="margin-top: 10px; font-weight: 600; color: var(--text-muted); text-align: center;">Assignment Management System</h3>
+        
+        <div class="card-grid">
+            <div class="card">
+                <h3>Assign to All</h3>
+                <p>Give an assignment to the entire class.</p>
+                <button class="btn-glow" style="padding: 10px; font-size: 0.9rem; background: linear-gradient(90deg, #f59e0b, #eab308);" onclick="handleAssignmentAction('assignAll')">Execute Action</button>
+            </div>
+            <div class="card">
+                <h3>Assign to One</h3>
+                <p>Give an assignment to a specific student.</p>
+                <button class="btn-glow" style="padding: 10px; font-size: 0.9rem;" onclick="handleAssignmentAction('assignOne')">Execute Action</button>
+            </div>
+            <div class="card">
+                <h3>Update Global Assignment</h3>
+                <p>Modify the class-wide assignment.</p>
+                <button class="btn-glow" style="padding: 10px; font-size: 0.9rem;" onclick="handleAssignmentAction('changeAll')">Execute Action</button>
+            </div>
+            <div class="card">
+                <h3>Update Target Assignment</h3>
+                <p>Modify a specific student's assignment.</p>
+                <button class="btn-glow" style="padding: 10px; font-size: 0.9rem;" onclick="handleAssignmentAction('changeOne')">Execute Action</button>
+            </div>
+            <div class="card" style="border-color: rgba(225, 29, 72, 0.3);">
+                <h3 style="color: #fda4af;">Delete Global Assignment</h3>
+                <p>Remove the class-wide assignment permanently.</p>
+                <button class="btn-glow" style="padding: 10px; font-size: 0.9rem; background: linear-gradient(90deg, #e11d48, #be123c);" onclick="handleAssignmentAction('deleteAll')">Delete Now</button>
+            </div>
+            <div class="card" style="border-color: rgba(16, 185, 129, 0.3);">
+                <h3 style="color: #6ee7b7;">Check Submissions</h3>
+                <p>Review and grade submitted assignments.</p>
+                <button class="btn-glow" style="padding: 10px; font-size: 0.9rem; background: linear-gradient(90deg, #10b981, #059669);" onclick="handleAssignmentAction('check')">Review Subs</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">Message</div>
+    <script src="app.js"></script>
+</body>
+</html>
